@@ -61,7 +61,7 @@ class Discuz:
         try:
             sql = "select * from post where fid='%s' and tid='%s'" % (fid,tid)
             self.cur.execute(sql)
-            tid = '18643517'
+            tid = '18643517' #just for test, this is a thread's id
             if self.cur.rowcount == -1:
                 tidurl = self.args['tidurl'] % tid
                 print tidurl
@@ -94,7 +94,7 @@ class Discuz:
             response = urllib2.urlopen(fidurl)
             content = response.read()
             tids = re.findall(self.regex['tidreg'], content)
-            tids = ['18643517']
+            tids = ['18643517'] #Just for test, reply the thread
             return tids
         else:
             print 'Error Please Login...'
@@ -110,8 +110,8 @@ class Discuz:
         self.conn.commit()
  
 if __name__ == '__main__':
-    username = 'object'
-    password = '8319czp'
+    username = '252866509'
+    password = '1234567'
     args = {''
             'loginurl': 'http://www.xcar.com.cn/bbs/logging.php?action=login',
             'loginsubmiturl': 'http://www.xcar.com.cn/bbs/logging.php?action=login&loginsubmit=yes',
